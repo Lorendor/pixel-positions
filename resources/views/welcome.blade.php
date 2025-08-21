@@ -1,6 +1,14 @@
 <x-layout>
     <div class="space-y-10">
-        <section>
+        <section class="text-center">
+            <h1 class="font-bold text-4xl">Let's Find Your Next Job</h1>
+
+            <form action="" class="mt-6">
+                <input type="text" placeholder="I am looking for ..." class="rounded-xl bg-white/5 border-white/10 w-full max-w-xl px-5 py-4">
+            </form>
+        </section>
+
+        <section class="pt-10">
             <x-section-heading>Featured Jobs</x-section-heading>
             <div class="grid lg:grid-cols-3 gap-8 mt-6">
                 <x-job-card/>
@@ -29,8 +37,10 @@
 
         <section>
             <x-section-heading>Recent Jobs</x-section-heading>
-            <div>
-
+            <div class="mt-6 space-y-3">
+                <x-job-card-wide/>
+                <x-job-card-wide/>
+                <x-job-card-wide/>
             </div>
         </section>
     </div>
