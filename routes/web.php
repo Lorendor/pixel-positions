@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\JobController::class,'index']);
 
-Route::get('/register', [\App\Http\Controllers\RegisteredUserController::class,'create']);
-Route::post('/register', [\App\Http\Controllers\RegisteredUserController::class,'store']);
+Route::middleware('guest')->group(function () {
 
-Route::get('/login', [SessionController::class, 'create']);
-Route::post('/login', [SessionController::class, 'store']);
-Route::delete('/logout', [SessionController::class, 'destroy']);
+    Route::get('/register', [\App\Http\Controllers\RegisteredUserController::class,'create']);
+    Route::post('/register', [\App\Http\Controllers\RegisteredUserController::class,'store']);
+    Route::get('/login', [SessionController::class, 'create']);
+    Route::post('/login', [SessionController::class, 'store']);
+});
+
+Route::delete('/logout', [SessionController::class, 'destroy'])->middleware('auth');
