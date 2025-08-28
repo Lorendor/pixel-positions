@@ -21,7 +21,7 @@
                 <a href="#">Companies</a>
             </div>
             <div>
-                <a href="">Post a job</a>
+                <a href="/register">Post a job</a>
             </div>
         </nav>
 
